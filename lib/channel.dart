@@ -1,3 +1,4 @@
+import 'dart:async';
 import 'dart:io';
 
 import 'package:flutter/material.dart';
@@ -107,10 +108,14 @@ class _MyChannelState extends State<_MyChannelDemo> {
 }
 
 // MethodChannel 调用 native 例子
+// EventChannel
 class _MyMethodChannelState extends State<_MyChannelDemo> {
   static const platform = const MethodChannel("app.channel.shared.data");
+  static const _eventChannel = EventChannel("EventChannelPlugin");
+  StreamSubscription streamSubscription;
   String _sharedText = "No data";
 
+  // 调用 native
   void _getSharedText() async {
     var data = await platform.invokeMethod("getSharedText");
     if (data != null) {
@@ -125,8 +130,8 @@ class _MyMethodChannelState extends State<_MyChannelDemo> {
     Future<dynamic> platformCallHandler(MethodCall call) async {
       switch (call.method) {
         case "getPlatform":
-          return getPlatformName(); //调用success方法
-//          return PlatformException(code: '1002',message: "出现异常"); //调用error
+//          return getPlatformName(); //调用success方法
+          return PlatformException(code: '1002',message: "出现异常"); //调用error
           break;
       }
     }
@@ -143,9 +148,45 @@ class _MyMethodChannelState extends State<_MyChannelDemo> {
     return "";
   }
 
+  //receive
+  void handleEventChannelReceive() {
+    streamSubscription = _eventChannel
+        .receiveBroadcastStream() //可以携带参数
+        .listen(_onData, onError: _onError, onDone: _onDone);
+  }
+
+  void _onDone() {
+    setState(() {
+      _sharedText = "endOfStream";
+    });
+  }
+
+  _onError(error) {
+    setState(() {
+      PlatformException platformException = error;
+      _sharedText = platformException.message;
+    });
+  }
+
+  void _onData(message) {
+    setState(() {
+      _sharedText = message;
+    });
+  }
+
+  @override
+  void dispose() {
+    if (streamSubscription != null) {
+      streamSubscription.cancel();
+      streamSubscription = null;
+    }
+    super.dispose();
+  }
+
   @override
   void initState() {
-    handleMethodChannelReceive();
+//    handleMethodChannelReceive();
+    handleEventChannelReceive();
     super.initState();
   }
 

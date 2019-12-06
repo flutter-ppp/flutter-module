@@ -28,7 +28,11 @@ For help getting started with Flutter, view our online
 1. 通过绑定 WidgetsBinding 观察者并监听 didChangeAppLifecycleState() 的变化事件来监听生命周期
 
 ###### 4. `channel.dart`
-1. 通过 MethodChannel 从dart里面调用native方法，并返回值。
+1. 通过 MethodChannel 调用 native 方法，并返回值。
+2. 通过 MethodChannel 调用 dart 方法，并返回值。
+3. 通过 BasicMessageChannel 
+4. EventChannel：用于数据流的通信，持续通信，收到消息后无法回复此次消息。通常用于Native向Dart的通信。
+
 
 ### 踩坑
 1. 示例中的Flutter-module是在beta branch创建出来的，运行的时候尽量在此版本下，以免出现兼容问题
