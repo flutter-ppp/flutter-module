@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_module/channel.dart';
+import 'package:flutter_module/layout.dart';
 
 //void main() => runApp(MyApp());
 //void main() => runApp(DemoApp());
-void main() => runApp(ChannelDemo());
+//void main() => runApp(ChannelDemo());
 //void main() => runApp(NetWorkApp());
 //void main() => runApp(LifecycleWatcher());
+void main() => runApp(LayoutApp());
 
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
