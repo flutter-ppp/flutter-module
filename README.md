@@ -15,6 +15,10 @@ For help getting started with Flutter, view our online
 
 ---
 
+### 说明
+1. 结合Android端项目一起使用，地址如下：[FirstFlutterModuleInAndroid](https://github.com/flutter-ppp/FirstFlutterModuleInAndroid)
+---
+
 ### Demo 描述
 ###### 1. `main.dart`
 模版生成的dart
@@ -34,12 +38,7 @@ For help getting started with Flutter, view our online
 3. 通过 BasicMessageChannel 
 4. EventChannel：用于数据流的通信，持续通信，收到消息后无法回复此次消息。通常用于Native向Dart的通信。
 
-
-### 踩坑
-1. 示例中的Flutter-module是在beta branch创建出来的，运行的时候尽量在此版本下，以免出现兼容问题
-
-### 说明
-1. 结合Android端项目一起使用，地址如下：[FirstFlutterModuleInAndroid](https://github.com/flutter-ppp/FirstFlutterModuleInAndroid)
+---
 
 ### 参考文档
 - [给 Android 开发者的 Flutter 指南](https://flutter.cn/docs/get-started/flutter-for/android-devs)
