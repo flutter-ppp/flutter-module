@@ -11,8 +11,7 @@ For help getting started with Flutter, view our online
 - `flutter channel ` see how many branches of flutter
 - `flutter channel beta`  go to flutter branch beta.
 
-注意：首先把 Flutter 切换到 beta/stable 分支 
-- [Flutter-Channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) 
+注意：首先把 Flutter 切换到 beta/stable 分支 , 可以参考[Flutter-Channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) 介绍
 
 ---
 
