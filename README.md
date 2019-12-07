@@ -37,9 +37,8 @@ For help getting started with Flutter, view our online
 ### 踩坑
 1. 示例中的Flutter-module是在beta branch创建出来的，运行的时候尽量在此版本下，以免出现兼容问题
 
-### [Dart Native 相互之间通信](https://juejin.im/post/5dce51edf265da0c0c1fe649)
-# flutter-module
-
+### 说明
+1. 结合Android端项目一起使用，地址如下：[FirstFlutterModuleInAndroid](https://github.com/flutter-ppp/FirstFlutterModuleInAndroid)
 
 ### 参考文档
 - [给 Android 开发者的 Flutter 指南](https://flutter.cn/docs/get-started/flutter-for/android-devs)
