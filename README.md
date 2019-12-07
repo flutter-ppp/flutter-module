@@ -14,6 +14,8 @@ For help getting started with Flutter, view our online
 注意：首先把 Flutter 切换到 beta/stable 分支 
 - [Flutter-Channel](https://github.com/flutter/flutter/wiki/Flutter-build-release-channels) 
 
+===
+
 ### Demo 描述
 ###### 1. `main.dart`
 模版生成的dart
