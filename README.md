@@ -38,8 +38,17 @@ For help getting started with Flutter, view our online
 3. 通过 BasicMessageChannel 
 4. EventChannel：用于数据流的通信，持续通信，收到消息后无法回复此次消息。通常用于Native向Dart的通信。
 
+###### 5. `layout.dart` 布局
+按照type分类:
+1. row，column 示例LineLayout布局
+2. relative ，示例Relative布局，里面含有ListView使用.
+3. stack, Stack可以类比web中的absolute，绝对布局。绝对布局一般在移动端开发中用的较少，但是在某些场景下，还是有其作用
+4. IndexedStack, IndexedStack继承自Stack，它的作用是显示第index个child，其他child都是不可见的。所以IndexedStack的尺寸永远是跟最大的子节点尺寸一致。
+5. gridView
+
 ---
 
 ### 参考文档
 - [给 Android 开发者的 Flutter 指南](https://flutter.cn/docs/get-started/flutter-for/android-devs)
 - [Flutter混合开发(三)：Android与Flutter之间通信详细指南](https://juejin.im/post/5dce51edf265da0c0c1fe649)
+- 参考了[flutter-study](https://github.com/yang7229693/flutter-study)项目
